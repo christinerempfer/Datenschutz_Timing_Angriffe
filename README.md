@@ -2,14 +2,10 @@
 
 Dieses Repository enthält die Materialien, die im Rahmen eines Projekts zur Untersuchung von **Timing-Angriffen** erstellt wurden. Das Projekt befasste sich mit der Funktionsweise von Timing-Leaks, deren praktischer Demonstration durch Simulationen und der Evaluierung von Tools zur Erkennung solcher Schwachstellen.
 
-## Projektziele
-
-* Ein tiefes Verständnis für Timing-Angriffe und deren Angriffsflächen entwickeln.
-* Methoden zur Identifikation von Timing-Leaks untersuchen.
-* Gegenmaßnahmen zur Verhinderung von Timing-Angriffen zusammenstellen.
-
 
 ### Beschreibung der Dateien und Verzeichnisse:
+
+* **`insecure_string_compare.py`**: Eine Python-Skript-Datei, die eine **nicht-konstantzeitige Stringvergleichsfunktion** implementiert. Diese Datei wurde für die praktische Simulation eines Timing-Angriffs genutzt, um die prinzipielle Ausnutzung von Zeitunterschieden zur Rekonstruktion geheimer Informationen zu demonstrieren. Hier wird durch zeitunterschiede in der Implementierung die korrekte Passwort Länge ermittelt und das Passwort schrittweise rekonstruiert.
 
 * **`dudect/`**: Enthält die notwendigen Dateien für die Integration und den Test mit dem **Dudect**-Framework. Dudect ist ein statistisches Tool zur Detektion von Timing-Leaks in C-Code.
     * `dudect.h`: Header-Datei des Dudect-Frameworks.
@@ -19,6 +15,5 @@ Dieses Repository enthält die Materialien, die im Rahmen eines Projekts zur Unt
     * `memcheck.h`, `poison.h`, `valgrind.h`: Header-Dateien, die für die Integration mit Valgrind/TimeCop notwendig sind.
     * `test_timecop`: Kompilierte ausführbare Datei des TimeCop-Tests.
     * `test_timecop.c`: Der C-Code, der die zu testende Funktion (z.B. den unsicheren Stringvergleich) in das TimeCop-Framework einbindet.
-* **`insecure_string_compare.py`**: Eine Python-Skript-Datei, die eine **nicht-konstantzeitige Stringvergleichsfunktion** implementiert. Diese Datei wurde für die praktische Simulation eines Timing-Angriffs genutzt, um die prinzipielle Ausnutzung von Zeitunterschieden zur Rekonstruktion geheimer Informationen zu demonstrieren.
 
 
